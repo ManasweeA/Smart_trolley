@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%  include "header.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Ez-Market</title>
+    <style>
+        body  {
+            background-image: url("/static/blurred-background.jpg");
+             background-repeat: no-repeat;
+             background-size:100%;
+            background-color: #cccccc;
+         }
+        .main {
+            padding-right: 50px;
+            position: relative;
+            height: 400px;
+            color: #fff;
+         }
+        .logo h1{
+            padding-left: 100px;
+            color: black;
+            font-family: SansSerif;
+            font-size: 70px;
+            text-align: left;
+            filter: drop-shadow( 2px 2px 1px #000000);
+         }
+         h3{
+            margin: 0;
+            padding-bottom: 50px;
+            font-style: italic;
+            font-size: 35px;
+            font-family: SansSerif;
+            text-align:right;
+            color: black;
+         }
+        .btn-success{
+            border-radius: 20px;
+            width: 300%;
+            font-size: 300%;
+         }
+        .bottom-center {
+            bottom: 0;
+            left: 40%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+    </style>
+</head>
+<body>
+  <div class="main">
+      <div class="logo">
+      <h1><B>Ez-Market</B></h1>
+      <h3>trolley id:1</h3>
+    </div>
+       <div class="position-absolute bottom-center">
+      <div class="btn_redirect" style="padding-bottom:3%;"><a role="button" href="/list" class="btn btn-success btn-lg">lets go</a></div>
+    </div>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body{
+            background-color:#EEE2DC;
+        }
+        .main{
+            background-color:#123C69;
+            margin: auto;
+        }
+
+        .logo h1{
+            padding-left: 100px;
+            color: white;
+            font-family: SansSerif;
+            font-size: 50px;
+            text-align: left;
+            filter: drop-shadow( 2px 2px 1px #fcf9f9);
+        }
+         h3{
+            margin: 0;
+            font-size: 35px;
+            font-style: italic;
+            font-family: SansSerif;
+            text-align:right;
+            padding-right: 50px;
+            color:white;
+        }
+       
+        
+        .bottom-right {
+            bottom: -200px;
+            right: 100px;
+        }
+      
+        .top-right{
+            top:120px;
+            right:50px;
+        }
+
+    
+		.tablename{
+			text-align: center;
+			color:white;
+		}
+		table{
+			width: 80%;
+			text-align: center;
+			font-size: 22px;
+		}
+		 table.center {
+    	margin-left:auto; 
+    	margin-right:auto;
+  		}
+		table, th, td{
+			border: 1px solid black;
+			border-collapse: collapse;
+			table-layout: fixed;
+		}
+		th, td{
+			text-align: center;
+			padding: 10px;
+		}
+		td:hover{
+			background: #123C69;
+		}
+		th{
+			background: #123C69;
+			color:white;
+		}
+		tr:nth-child(odd){
+			background: #EEE2DC;
+			color: black;
+		}
+		tr:nth-child(even){
+			background: rgba(0, 0, 0, .8);
+			color: white;
+		}
+		@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+		font-size: 15px;
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	
+	td:nth-of-type(1):before { content: "Name"; }
+	td:nth-of-type(2):before { content: "Price"; }
+	td:nth-of-type(3):before { content: "Quantity"; }
+	
+}
+} 
+	
+    </style>
+
+    
+</head>
+<body ng-app="">
+    <div class="main">
+        <div class="logo">
+        <h1><B>Ez-Market</B></h1>
+        <h3>trolley id:1</h3>
+        </div>
+	</div>  
+	<div class="col-md-12">
+		<div class="row"><div class="btn_redirect" style="padding-bottom:3%; width:150%; text-align: right; margin-top: 20px; margin-right: 20px; font-size: 150%"><a role="button" href="/location" class="btn btn-success btn-lg">find the product</a></div></div>
+		<div class="row">
+    <div class="btn_redirect" style="padding-bottom:3%; width:150%; font-size:190%; text-align: center; margin-top: 20px;"><a role="button" href="/scanner" class="btn btn-success btn-lg">start scanning</a></div>
+		</div>
+	<div class="row" >
+		<div style="margin-top: 20px; margin-left: auto; margin-right: auto;" >
+			<h1 class="tablename" style="color: black;"> Products Scanned</h1>
+			</div>
+			<form method="post" action="/bill/"> 
+					{% csrf_token %}
+			<table class="center">
+				<thead>
+				<tr>
+			
+				<th>Name</th>
+				<th>Price (Rs)</th>
+				<th>Quantity</th>
+			
+				
+				
+			</tr>
+			</thead>
+			<tbody>
+				
+			{% for i in billdata %}
+			<tr>
+				<td>{{ i.name }}</td>
+				<td>{{ i.price }} </td>
+				<td ng-init="{{ i.num }}=1;"><input type="number" name="{{ i.num }}" style="height: 30px; width: 150px;"ng-model="{{ i.num }}" ></td>
+			</tr>
+			{% endfor %}
+			
+			
+			</tbody>
+			</table>
+			<div style="text-align: center; margin-top: 5%;">
+			<button type="submit" value="submit" class="btn-success" style="width:20%;font-size:150%;">Generate Bill</button>
+			</div>
+			</form>
+	</div>
+    
+
+<div class="row">
+<div class="btn_redirect" style="padding-bottom:3%; width:200%; font-size:300%; text-align: right; margin-right: 100px;"><a role="button" href="/exit" class="btn btn-success btn-lg">exit</a></div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

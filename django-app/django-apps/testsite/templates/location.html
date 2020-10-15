@@ -1,0 +1,322 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            background-color:#EEE2DC;
+        }
+        .topnav{
+            background-color:#123C69;
+            overflow: hidden;
+        }
+         h1{
+            padding-left: 100px;
+            color:white;
+            font-family: SansSerif;
+            font-size: 50px;
+            text-align: left;
+            filter: drop-shadow( 2px 2px 1px #fcf9f9);
+        }
+        h3{
+            margin: 0;
+            font-size: 35px;
+            font-style: italic;
+            font-family: SansSerif;
+            text-align:right;
+            color:white;
+        }
+        .btn-primary{
+             border-radius: 20px;
+            width: 120%;
+            font-size: 150%;
+        }
+        .top-left {
+            top: 160px;
+            left: 130px;
+        }
+        
+        .top-center {
+            top: 160px;
+            left:600px;
+        }
+        
+        .top-right {
+            top: 160px;
+            right: 150px;
+        }
+        .middle-left {
+            top: 250px;
+            left: 130px;
+        }
+        .middle-center {
+            top:250px;
+            left:600px;
+        }
+    
+        .middle-right {
+            top:250px;
+            right: 150px;
+        }
+       
+        .bottom-center {
+            bottom: 260px;
+            left: 600px;
+        }
+        .btn-success{
+             border-radius: 20px;
+            width: 200%;
+            font-size: 200%;
+        }
+        .bottom-right {
+            bottom: 50px;
+            right: 100px;
+        }
+
+
+
+        .modal {
+         display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }   
+
+        /* Modal Content */
+        .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+
+
+    .modal-body {padding: 2px 16px};
+        
+    </style>
+
+
+
+</head>
+<body>
+   <div class="topnav">
+        <h1><B>Ez-Market</B></h1>
+        <h3>trolley id:1</h3>
+    </div> 
+    
+    <div class="position-absolute top-left">
+    <button class="modal-button btn btn-primary"  href="#myModal1">Dairy products</button>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+        <span class="close">×</span>
+        </div>
+    <div class="modal-body">
+      <img src="/static/images/shelve1.jpg" style="width: 100%;">
+    </div>
+  </div>
+
+</div>
+
+
+<div class="position-absolute top-center">
+<button class="modal-button btn btn-primary" href="#myModal2">Grocery</button>
+</div>
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">×</span>
+    </div>
+    <div class="modal-body">
+        <img src="/static/images/shelve2.png" style="width: 100%;">
+    </div>
+  </div>
+
+</div>
+
+<div class="position-absolute top-right">
+    <button class="modal-button btn btn-primary" href="#myModal3">Cutlery</button>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal3" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">×</span>
+        </div>
+        <div class="modal-body">
+            <img src="/static/images/shelve2.png" style="width: 100%;">
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="position-absolute middle-left">
+        <button class="modal-button btn btn-primary" href="#myModal4">Snacks</button>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal4" class="modal">
+        
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+            </div>
+            <div class="modal-body">
+                <img src="/static/images/shelve3.png" style="width: 100%;">
+            </div>
+          </div>
+        
+        </div>
+
+        <div class="position-absolute middle-center">
+            <button class="modal-button btn btn-primary" href="#myModal5">Cosmetics</button>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal5" class="modal">
+            
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">×</span>
+                </div>
+                <div class="modal-body">
+                    <img src="/static/images/shelve4.png" style="width: 100%;">
+                </div>
+              </div>
+            
+            </div>
+
+            <div class="position-absolute middle-right">
+                <button class="modal-button btn btn-primary" href="#myModal6">Clothing</button>
+                </div>
+                <!-- The Modal -->
+                <div id="myModal6" class="modal">
+                
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <span class="close">×</span>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/static/images/shelve5.png" style="width: 100%;">
+                    </div>
+                </div>
+                </div>
+                
+                <div class="position-absolute bottom-center">
+                    <button class="modal-button btn btn-primary" href="#myModal7">Toiletries</button>
+                    </div>
+                    <!-- The Modal -->
+                    <div id="myModal7" class="modal">
+                    
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <span class="close">×</span>
+                        </div>
+                        <div class="modal-body">
+                            <img src="/static/images/shelve4.png" style="width: 100%;">
+                        </div>
+                      </div>
+                    
+                    </div>
+                    
+
+    <div class="position-absolute bottom-right">
+        <div class="btn_redirect" style="padding-bottom:3%;"><a role="button" href="/list" class="btn btn-success btn-lg">Back</a></div>
+       
+       <script type="text/javascript">
+        var btn = document.querySelectorAll("button.modal-button");
+
+// All page modals
+var modals = document.querySelectorAll('.modal');
+
+// Get the <span> element that closes the modal
+var spans = document.getElementsByClassName("close");
+
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+ btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+ }
+}
+
+// When the user clicks on <span> (x), close the modal
+for (var i = 0; i < spans.length; i++) {
+ spans[i].onclick = function() {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+ }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+     for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+     }
+    }
+}
+
+
+
+        </script>
+            
+</body>
+</html>
